@@ -1,4 +1,5 @@
-#pragma once
+#ifndef DATABASE 
+#define DATABASE
 
 enum DB_TYPE{
 	INTEGER,
@@ -6,10 +7,16 @@ enum DB_TYPE{
 	STRING,
 };
 
-struct {
-	void *db_ptr;
-	size_t db_size;
-	DB_TYPE db_type;
-} db;
+typedef struct {
+	void *ptr;
+	DB_TYPE type;
+} ROW;
 
-void *create_database(unsigned int rows, unsigned int colums, DB_TYPE type, unsigned int string_size=0);
+typedef struct {
+	unsigned int colums_c, rows_c;
+	ROW entries[0];
+} DB;
+
+void *create_database(unsigned int rows, unsigned int colums, DB_TYPE types[0]);
+
+#endif
