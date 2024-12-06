@@ -8,10 +8,10 @@ int main() {
 
 	std::cout << "Creating database...\n";
 	DB_TYPE type[1] = {INTEGER};
-	DB *db = create_table(1, 1, type);
+	DB *db = create_database(1, 1, type);
 
-	std::cout << "Deleting table...\n";
-	delete_table(db);
+	std::cout << "Deleting database...\n";
+	delete_database(db);
 
 	return 0;
 }

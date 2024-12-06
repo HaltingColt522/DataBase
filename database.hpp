@@ -17,7 +17,7 @@ typedef struct {
 	ROW entries[0];
 } DB;
 
-DB *create_table(unsigned int rows, unsigned int colums, DB_TYPE typess[0]);
-void delete_table(DB* db);
+DB *create_database(unsigned int rows, unsigned int colums, DB_TYPE typess[0]);
+void delete_database(DB* db);
 
 #endif
