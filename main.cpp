@@ -7,8 +7,27 @@ int main() {
 	std::cout << "Starting to run...\n";
 
 	std::cout << "Creating database...\n";
-	DB_TYPE type[1] = {INTEGER};
-	DB *db = create_database(1, 1, type);
+	DB_TYPE type[2] = {INTEGER, INTEGER};
+	DB *db = create_database(2, 2, type);
+
+	std::cout << "Assigning content...\n";
+	int content[2] = {10, 100};
+	assign_row(db, 0, content);
+	int content2[2] = {7, 19};
+	assign_row(db, 1, content2);
+
+
+	std::cout << "Outputting content...\n";
+	int output[2] = {0};
+	get_row(db, 0, output);
+	std::cout << output[0] << std::endl;
+	std::cout << output[1] << std::endl;
+	get_row(db, 1, output);
+	std::cout << output[0] << std::endl;
+	std::cout << output[1] << std::endl;
+
+	std::cout << "Clearing row...\n";
+	clear_row(db, 0);
 
 	std::cout << "Deleting database...\n";
 	delete_database(db);

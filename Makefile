@@ -1,4 +1,4 @@
-files = main.cpp database.cpp
+files = main.cpp database.cpp access.cpp dynamic.cpp
 
 run:
 	g++ ${files} -o test.exe
