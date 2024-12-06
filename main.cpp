@@ -26,6 +26,19 @@ int main() {
 	std::cout << output[0] << std::endl;
 	std::cout << output[1] << std::endl;
 
+	std::cout << "Adding row...\n";
+	db = add_row(db, 0, INTEGER); 
+	std::cout << "Outputting content...\n";
+	get_row(db, 1, output);
+	std::cout << output[0] << std::endl;
+	std::cout << output[1] << std::endl;
+	get_row(db, 2, output);
+	std::cout << output[0] << std::endl;
+	std::cout << output[1] << std::endl;
+
+	std::cout << "Deleting row...\n";
+	delete_row(db, 2);
+
 	std::cout << "Clearing row...\n";
 	clear_row(db, 0);
 

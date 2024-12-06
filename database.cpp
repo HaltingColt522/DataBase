@@ -17,11 +17,14 @@ DB *create_database(unsigned int rows, unsigned int colums, DB_TYPE types[0]) {
 		switch (types[i]) {
 			case INTEGER:
 				type_size = sizeof(int);
+				break;
 			case BOOLEAN:
 				type_size = sizeof(bool);
+				break;
 			case STRING:
 				#define STRING_SIZE 10
 				type_size = sizeof(char) * STRING_SIZE;
+				break;
 		}
 		db->entries[i].ptr = malloc(type_size * colums);
 		memset(db->entries[i].ptr, 0, type_size * colums);
