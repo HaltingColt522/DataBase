@@ -1,8 +1,8 @@
-files = main.cpp database.cpp access.cpp dynamic.cpp
+files = main.cpp dataBase.cpp Table.cpp
 
 run:
-	g++ ${files} -o test.exe -ggdb -static
+	g++ ${files} -o test.exe -ggdb
 	./test.exe
 
 object:
-	g++ ${files} -o database.o -static
+	g++ ${files} -o database.o
