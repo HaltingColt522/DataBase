@@ -1,6 +1,6 @@
-#include <cstdlib>
-#include <cstring>
-#include "./database.hpp"
+#include <stdlib.h>
+#include <string.h>
+#include "./database.h"
 
 DB *create_database(unsigned int rows, unsigned int colums, DB_TYPE types[0]) {
 	size_t db_size = sizeof(DB) + (sizeof(ROW) * rows);

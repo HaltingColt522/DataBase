@@ -1,6 +1,6 @@
-#include <cstring>
-#include <cstdlib>
-#include "./database.hpp"
+#include <string.h>
+#include <stdlib.h>
+#include "./database.h"
 
 void delete_row(DB *db, unsigned int row) {
 	unsigned int row1 = row+1;
@@ -19,7 +19,7 @@ DB *add_row(DB *db, unsigned int row, DB_TYPE type) {
 	unsigned int row2 = row+2;
 	unsigned int row1 = row+1;
 	if (row2 > db->rows_c){
-		return nullptr;
+		return NULL;
 	}
 	memmove(&db->entries[row2], &db->entries[row1], (&db->entries[db->rows_c] - &db->entries[row2]) * sizeof(ROW));
 	

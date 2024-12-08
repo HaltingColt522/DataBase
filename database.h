@@ -1,13 +1,14 @@
 #ifndef DATABASE 
 #define DATABASE
 
-#include <cstddef>
+#include <stddef.h>
+#include <stdbool.h> 
 
-enum DB_TYPE{
+typedef enum{
 	INTEGER,
 	BOOLEAN,
 	STRING,
-};
+} DB_TYPE;
 
 typedef struct {
 	void *ptr;
@@ -20,7 +21,7 @@ typedef struct {
 	ROW entries[0];
 } DB;
 
-DB *create_database(unsigned int rows, unsigned int colums, DB_TYPE typess[0]);
+DB *create_database(unsigned int rows, unsigned int colums, DB_TYPE types[0]);
 void delete_database(DB* db);
 
 //rows start at 0 - (index at array)

@@ -1,5 +1,5 @@
-#include <cstring>
-#include "./database.hpp"
+#include <string.h>
+#include "./database.h"
 
 void assign_row(DB* db, unsigned int row, void *content) {
 	memcpy(db->entries[row].ptr, content, db->entries[row].size);

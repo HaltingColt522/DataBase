@@ -1,5 +1,5 @@
 #include <iostream>
-#include "database.hpp"
+#include "database.h"
 
 int main() {
 	// this function is used to test the lib before porting to lazarus
