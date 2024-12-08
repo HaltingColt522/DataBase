@@ -8,7 +8,7 @@ unit database;
 {$linklib libmsvcrt.a}
 {$linklib libmingw32.a}
 {$linklib libgcc.a}
-{$linklib libmingwex.a}
+
 {$else} // Linux
 {$linklib libc} // or try {$linklib c}
 {$endif}
@@ -30,9 +30,9 @@ interface
 type
   DB_TYPE =  Longint;
     Const
-      INTEGER = 0;
-      BOOLEAN = 1;
-      STRINGG = 2;
+      DB_INTEGER = 0;
+      DB_BOOLEAN = 1;
+      DB_STRING = 2;
 
 type
   ROW = record
