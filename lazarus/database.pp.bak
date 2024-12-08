@@ -4,7 +4,11 @@ unit database;
 {$link access.o}
 {$link dynamic.o}
 
-{$linklib msvcrt.dll}
+{$ifdef WINDOWS}
+{$linklib libmsvcrt}
+{$else} // Linux
+{$linklib libc} // or try {$linklib c}
+{$endif}
 
 interface
 

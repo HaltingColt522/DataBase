@@ -4,7 +4,14 @@ unit database;
 {$link access.o}
 {$link dynamic.o}
 
-{$linklib msvcrt.dll}
+{$ifdef WINDOWS}
+{$linklib libmsvcrt.a}
+{$linklib libmingw32.a}
+{$linklib libgcc.a}
+{$linklib libmingwex.a}
+{$else} // Linux
+{$linklib libc} // or try {$linklib c}
+{$endif}
 
 interface
 
